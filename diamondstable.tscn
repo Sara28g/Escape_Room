@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnip7owseorcb"]
+
+[ext_resource type="Script" uid="uid://leq0yirxhq5l" path="res://diamondstable.gd" id="1_0m5fb"]
+[ext_resource type="Texture2D" uid="uid://cbyh0tqh05u5x" path="res://assets/textures/rough_plaster_brick_04_diff_1k.jpg" id="1_rbf2k"]
+[ext_resource type="Texture2D" uid="uid://ctfo1eb5hwjar" path="res://assets/textures/rough_plaster_brick_04_rough_1k.jpg" id="2_nl050"]
+[ext_resource type="Texture2D" uid="uid://dotpn0x4grerd" path="res://assets/textures/rough_plaster_brick_04_disp_1k.png" id="3_fhgbq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig0v1"]
+albedo_texture = ExtResource("1_rbf2k")
+roughness_texture = ExtResource("2_nl050")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1n8lp"]
+albedo_texture = ExtResource("1_rbf2k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyerb"]
+albedo_texture = ExtResource("1_rbf2k")
+roughness_texture = ExtResource("3_fhgbq")
+
+[sub_resource type="Animation" id="Animation_5oeyt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.249, 0.253, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_an2xu"]
+resource_name = "table_open"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.253, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_simqy"]
+_data = {
+&"RESET": SubResource("Animation_5oeyt"),
+&"table_open": SubResource("Animation_an2xu")
+}
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249, 0.253, 0)
+script = ExtResource("1_0m5fb")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172465, 0, -0.0214707)
+radius = 0.315
+sides = 64
+material = SubResource("StandardMaterial3D_ig0v1")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.174323, -0.0980378, -8.57076e-10, 2.79144e-17, -8.74228e-09, 0.04, -0.0980378, -0.174323, -1.52399e-09, -0.200669, 1.00999, 0.0752108)
+operation = 2
+polygon = PackedVector2Array(0.195162, 0.00567572, -0.355327, 0.452159, 0.400553, 0.461949, 1, 0)
+material = SubResource("StandardMaterial3D_1n8lp")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.197102, 0.0339215, 2.96552e-10, 0, -8.74228e-09, 0.04, 0.0339215, -0.197102, -1.72313e-09, 0.0304019, 1.00999, 0.0807322)
+operation = 2
+polygon = PackedVector2Array(0.195162, 0.00567572, -0.355327, 0.452159, 0.400553, 0.461949, 1, 0)
+material = SubResource("StandardMaterial3D_tyerb")
+
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.0940083, -0.176529, -1.54327e-09, -0.000967432, -0.000515203, 0.0399994, -0.176526, -0.0940069, -0.000219213, 0.0897329, 1.00841, -0.0423083)
+operation = 2
+polygon = PackedVector2Array(0.195162, 0.00567572, -0.355327, 0.452159, 0.400553, 0.461949, 1, 0)
+material = SubResource("StandardMaterial3D_tyerb")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.0289679, 0.197309, 0.00303227, 0, -0.0153229, 0.0398824, 0.197891, -0.0288828, -0.000443874, -0.101, 1.01, 0.064)
+operation = 2
+polygon = PackedVector2Array(0.195162, 0.00567572, -0.355327, 0.452159, 0.400553, 0.461949, 1, 0)
+material = SubResource("StandardMaterial3D_tyerb")
+
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.157926, -0.122356, -0.00188038, 0, -0.0153229, 0.0398824, -0.122717, 0.157462, 0.00241989, -0.024, 1.01, -0.139)
+operation = 2
+polygon = PackedVector2Array(0.195162, 0.00567572, -0.355327, 0.452159, 0.400553, 0.461949, 1, 0)
+material = SubResource("StandardMaterial3D_tyerb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_simqy")
+}

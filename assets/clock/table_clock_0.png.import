@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://clkrx2x7debw8"
+path.s3tc="res://.godot/imported/table_clock_0.png-9007440fb16d612e0f0e0cddc42dea08.s3tc.ctex"
+path.etc2="res://.godot/imported/table_clock_0.png-9007440fb16d612e0f0e0cddc42dea08.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d6c5d59a70a550f6a1d706e10fafad2c"
+}
+
+[deps]
+
+source_file="res://assets/clock/table_clock_0.png"
+dest_files=["res://.godot/imported/table_clock_0.png-9007440fb16d612e0f0e0cddc42dea08.s3tc.ctex", "res://.godot/imported/table_clock_0.png-9007440fb16d612e0f0e0cddc42dea08.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bbhqv2e3pyq81"
+path.s3tc="res://.godot/imported/adventurers_camp_-_candles_3.png-289f5295ad3c4776232395512dd2054c.s3tc.ctex"
+path.etc2="res://.godot/imported/adventurers_camp_-_candles_3.png-289f5295ad3c4776232395512dd2054c.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "6dfc542c3d9e8e4941b08ab8c48fe383"
+}
+
+[deps]
+
+source_file="res://assets/candels/adventurers_camp_-_candles_3.png"
+dest_files=["res://.godot/imported/adventurers_camp_-_candles_3.png-289f5295ad3c4776232395512dd2054c.s3tc.ctex", "res://.godot/imported/adventurers_camp_-_candles_3.png-289f5295ad3c4776232395512dd2054c.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

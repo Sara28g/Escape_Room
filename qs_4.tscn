@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3p6h0t7nc71l"]
+
+[ext_resource type="Texture2D" uid="uid://rp0kc2dmq5oo" path="res://assets/pic/icons8-submit-for-approval-50.png" id="1_2wiyd"]
+[ext_resource type="Script" uid="uid://dj5powxvsyxfn" path="res://qs_4.gd" id="1_rber2"]
+[ext_resource type="Script" uid="uid://ddrvvvv5xvo0l" path="res://submit4.gd" id="2_rber2"]
+[ext_resource type="Texture2D" uid="uid://uqmin36anod2" path="res://assets/pic/icons8-back-100 (1).png" id="3_t4as3"]
+[ext_resource type="Script" uid="uid://bxxf2ph155t33" path="res://closebutton.gd" id="4_ifb00"]
+
+[node name="qs4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rber2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 65.0
+offset_right = 1080.0
+offset_bottom = 577.0
+color = Color(0.00119745, 0.00119745, 0.00119745, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 71.0
+offset_right = 1065.0
+offset_bottom = 574.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 569.0
+offset_top = 175.0
+offset_right = 1025.0
+offset_bottom = 329.0
+text = "10 years ago, a solar power plant had a capacity of 50 MW. Today, its capacity has increased to 80 MW. The plant's capacity grows exponentially each year.
+What is the annual percentage growth rate of the power plant's capacity?"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 336.0
+offset_right = 912.0
+offset_bottom = 360.0
+text = "%"
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+modulate = Color(0.982672, 1, 0.99952, 1)
+layout_mode = 0
+offset_left = 715.0
+offset_top = 328.0
+offset_right = 925.0
+offset_bottom = 377.0
+scale = Vector2(0.8, 0.8)
+placeholder_text = "write the answer"
+alignment = 1
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 485.0
+offset_right = 1041.0
+offset_bottom = 521.0
+icon = ExtResource("1_2wiyd")
+expand_icon = true
+script = ExtResource("2_rber2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 487.0
+offset_right = 970.0
+offset_bottom = 520.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CLOSE" type="Button" parent="."]
+modulate = Color(0.962546, 0.962546, 0.962546, 1)
+self_modulate = Color(0.91664, 0.91664, 0.91664, 1)
+layout_mode = 0
+offset_left = 509.0
+offset_top = 75.0
+offset_right = 551.0
+offset_bottom = 119.0
+icon = ExtResource("3_t4as3")
+expand_icon = true
+script = ExtResource("4_ifb00")
+
+[connection signal="reset" from="." to="submit" method="reset_puzzle"]
+[connection signal="q4correct" from="submit" to="." method="_on_submit_q_4_correct"]
+[connection signal="sceneover" from="submit" to="." method="_on_close_sceneover"]
+[connection signal="pressed" from="CLOSE" to="CLOSE" method="_on_pressed"]
+[connection signal="sceneover" from="CLOSE" to="." method="_on_close_sceneover"]

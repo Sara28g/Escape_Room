@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bslmw3nnj0uv5"]
+
+[ext_resource type="Script" uid="uid://dk5okndhycl8h" path="res://player/player.gd" id="1_6u6tu"]
+[ext_resource type="Script" uid="uid://c2rjq7iy235wa" path="res://camera_3d.gd" id="2_65nr7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_um3qa"]
+radius = 0.25
+height = 1.82696
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_6u6tu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_um3qa")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.396035, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00417757, -0.0125481, -0.0073328)
+fov = 76.874
+script = ExtResource("2_65nr7")
+
+[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.0242808, 0)
+
+[connection signal="rostop2" from="." to="head/Camera3D" method="_on_player_rostop_2"]

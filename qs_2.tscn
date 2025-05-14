@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://bajw0gm5lswxx"]
+
+[ext_resource type="Script" uid="uid://8gv7foe2sb03" path="res://qs_2.gd" id="1_3m8j4"]
+[ext_resource type="Script" uid="uid://peduxvk38ax8" path="res://qs_22.gd" id="1_f0qxg"]
+[ext_resource type="Texture2D" uid="uid://dieeikiu0w3me" path="res://assets/pic/Screenshot 2025-02-04 164621.png" id="2_g5xwi"]
+[ext_resource type="Texture2D" uid="uid://rp0kc2dmq5oo" path="res://assets/pic/icons8-submit-for-approval-50.png" id="3_b6rav"]
+[ext_resource type="Script" uid="uid://clvswgddsmi0a" path="res://submitq2.gd" id="4_gw1tt"]
+[ext_resource type="Texture2D" uid="uid://uqmin36anod2" path="res://assets/pic/icons8-back-100 (1).png" id="5_ioylr"]
+[ext_resource type="Script" uid="uid://bxxf2ph155t33" path="res://closebutton.gd" id="6_y1sw7"]
+
+[node name="qs2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f0qxg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 34.0
+offset_right = 1106.0
+offset_bottom = 612.0
+color = Color(0.00119745, 0.00119745, 0.00119745, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 34.0
+offset_right = 1106.0
+offset_bottom = 612.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 545.0
+offset_right = 977.0
+offset_bottom = 578.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 543.0
+offset_right = 1044.0
+offset_bottom = 579.0
+icon = ExtResource("3_b6rav")
+expand_icon = true
+script = ExtResource("4_gw1tt")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 124.0
+offset_right = 1071.0
+offset_bottom = 316.0
+text = "Given the complex numbers:
+z1 = (max−1) + (min+2) i
+z2 = the conjugate of z1
+The two numbers are vertices of a regular polygon with three sides between them.
+Find the area of the polygon.
+"
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+modulate = Color(0.982672, 1, 0.99952, 1)
+layout_mode = 0
+offset_left = 595.0
+offset_top = 299.0
+offset_right = 774.0
+offset_bottom = 332.0
+placeholder_text = "write the answer"
+alignment = 1
+
+[node name="q1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3m8j4")
+
+[node name="TextureRect" type="TextureRect" parent="q1"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 64.0
+offset_right = 1034.0
+offset_bottom = 514.0
+texture = ExtResource("2_g5xwi")
+expand_mode = 1
+
+[node name="Line2D" type="Line2D" parent="q1"]
+width = 0.8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="q1"]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 538.0
+offset_right = 794.0
+offset_bottom = 586.0
+text = "z1 = (max−1) + (min+2) i
+extinguished candels"
+
+[node name="CLOSE" type="Button" parent="."]
+modulate = Color(0.962546, 0.962546, 0.962546, 1)
+self_modulate = Color(0.91664, 0.91664, 0.91664, 1)
+layout_mode = 0
+offset_left = 524.0
+offset_top = 48.0
+offset_right = 566.0
+offset_bottom = 92.0
+icon = ExtResource("5_ioylr")
+expand_icon = true
+script = ExtResource("6_y1sw7")
+
+[connection signal="reset" from="." to="submit" method="reset_puzzle"]
+[connection signal="sceneover" from="submit" to="." method="_on_close_sceneover"]
+[connection signal="stop1" from="submit" to="." method="_on_submit_stop_1"]
+[connection signal="stop1" from="submit" to="q1" method="_on_submit_stop_1"]
+[connection signal="traingo" from="submit" to="." method="_on_submit_traingo"]
+[connection signal="pressed" from="CLOSE" to="CLOSE" method="_on_pressed"]
+[connection signal="sceneover" from="CLOSE" to="." method="_on_close_sceneover"]

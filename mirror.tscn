@@ -1,0 +1,271 @@
+[gd_scene load_steps=27 format=4 uid="uid://bnnmf87iiqe4c"]
+
+[ext_resource type="Texture2D" uid="uid://csaijr3pwrovd" path="res://assets/6_infinite_mirror_3december2019_4.png" id="1_2owtt"]
+[ext_resource type="Script" uid="uid://b7de8mblbfe1d" path="res://mirror.gd" id="1_qjont"]
+[ext_resource type="Texture2D" uid="uid://cb73tpqcliqx2" path="res://assets/6_infinite_mirror_3december2019_3.png" id="2_qjont"]
+[ext_resource type="Texture2D" uid="uid://bcrkbdwdkclla" path="res://assets/pic/Screenshot 2025-04-02 141724.png" id="3_f6ddb"]
+[ext_resource type="Texture2D" uid="uid://8vg7cggt4k8b" path="res://assets/6_infinite_mirror_3december2019_0.png" id="4_t7vqe"]
+[ext_resource type="Texture2D" uid="uid://crn48c04bmjq1" path="res://assets/6_infinite_mirror_3december2019_1.png" id="5_wh5pw"]
+[ext_resource type="Texture2D" uid="uid://brtccgdid5ukj" path="res://assets/6_infinite_mirror_3december2019_2.png" id="6_kmta4"]
+[ext_resource type="Script" uid="uid://465fw3gmpjc8" path="res://cameranow.gd" id="7_f0ft6"]
+[ext_resource type="Texture2D" uid="uid://uqmin36anod2" path="res://assets/pic/icons8-back-100 (1).png" id="8_lmpjp"]
+[ext_resource type="Script" uid="uid://dsfcei2u0kc40" path="res://closecam.gd" id="9_87s7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbh7y"]
+resource_name = "Magic_Mirror_Back_Front"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 0)
+metallic_texture = ExtResource("1_2owtt")
+metallic_texture_channel = 2
+roughness = 0.0
+roughness_texture = ExtResource("1_2owtt")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_qjont")
+ao_enabled = true
+ao_texture = ExtResource("1_2owtt")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c73dn"]
+_surfaces = [{
+"aabb": AABB(-0.45, -0.122674, 0.0564476, 0.9, 0.165596, 1.89277),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "Magic_Mirror_Back_Front",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAD/////AAD//wAAAAAAAP///////wAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5hx78"]
+resource_name = "Sketchfab_Scene_Object_0"
+_surfaces = [{
+"aabb": AABB(-0.45, -0.122674, 0.0564476, 0.9, 0.165596, 1.89277),
+"attribute_data": PackedByteArray("aOCflnea+QJ3mp+WaOD5Ag=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_bbh7y"),
+"name": "Magic_Mirror_Back_Front",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAD//////////wAAAAD/////////////AAAAAAAA////f8rC/3/Kwv9/ysL/f8rC")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_c73dn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2kltt"]
+size = Vector2(1, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r78ie"]
+albedo_texture = ExtResource("3_f6ddb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ysr6f"]
+resource_name = "Magic_Mirror_Front"
+transparency = 4
+albedo_color = Color(0, 0, 0, 0.922879)
+metallic_texture = ExtResource("1_2owtt")
+metallic_texture_channel = 2
+roughness = 0.0
+roughness_texture = ExtResource("1_2owtt")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_qjont")
+ao_enabled = true
+ao_texture = ExtResource("1_2owtt")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m2h4e"]
+_surfaces = [{
+"aabb": AABB(-0.45, -0.124667, 0.0566219, 0.9, 0.165596, 1.89277),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "Magic_Mirror_Front",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAD///////8AAP//AAAAAAAAAAD/////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xdo47"]
+resource_name = "Sketchfab_Scene_Object_2"
+_surfaces = [{
+"aabb": AABB(-0.45, -0.124667, 0.0566219, 0.9, 0.165596, 1.89277),
+"attribute_data": PackedByteArray("Bf0vuV9pIP8F/SD/X2kvuQ=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_ysr6f"),
+"name": "Magic_Mirror_Front",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAATtP///////9O0///AAAAAE7TAAD/////TtOXVpdWl1aXVpdWl1aXVpdW")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_m2h4e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqw7c"]
+resource_name = "Magic_Mirror"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("4_t7vqe")
+metallic = 1.0
+metallic_texture = ExtResource("5_wh5pw")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("5_wh5pw")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("6_kmta4")
+normal_enabled = true
+normal_texture = ExtResource("2_qjont")
+ao_enabled = true
+ao_texture = ExtResource("5_wh5pw")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6gma0"]
+_surfaces = [{
+"aabb": AABB(-0.45, -0.124667, 0.0564476, 0.9, 0.167588, 1.89294),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABAACAAYAAwAHAAUABwAEAAYABwAGAAUA"),
+"name": "Magic_Mirror",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("ZmbmvpfOLz32f/k/ZmbmPmulJz2shfk/ZmbmvmulJz2shfk/ZmbmPpfOLz32f/k/Zmbmvqc8+72ZNWc9ZmbmPj1R/71g7Gc9Zmbmvj1R/71g7Gc9ZmbmPqc8+72ZNWc9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0cih1"]
+resource_name = "Sketchfab_Scene_Object_3"
+_surfaces = [{
+"aabb": AABB(-0.45, -0.124667, 0.0564476, 0.9, 0.167588, 1.89294),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0A"),
+"material": SubResource("StandardMaterial3D_xqw7c"),
+"name": "Magic_Mirror",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("ZmbmvpfOLz32f/k/ZmbmPmulJz2shfk/ZmbmvmulJz2shfk/ZmbmPpfOLz32f/k/ZmbmPqc8+72ZNWc9Zmbmvj1R/71g7Gc9ZmbmPj1R/71g7Gc9Zmbmvqc8+72ZNWc9Zmbmvqc8+72ZNWc9ZmbmvmulJz2shfk/Zmbmvj1R/71g7Gc9ZmbmvpfOLz32f/k/ZmbmPpfOLz32f/k/ZmbmPj1R/71g7Gc9ZmbmPmulJz2shfk/ZmbmPqc8+72ZNWc9/39Liv///z//f0uK////P/9/S4r///8//39Liv///z+y9QAA////v7L1AAD///+/svUAAP///7+y9QAA////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/////f////7////9/////v////3////+/////f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6gma0")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ag7m0"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.136994, -0.00120615, 1, 0.273931, 2.0011),
+"format": 34896613377,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAQAFAAMAAQAEAAUABQAGAAMAAgADAAYABAAHAAUABAAAAAcABQAHAAYAAAACAAgABwAAAAkAAAAIAAkABgAHAAoABwAJAAoAAgAGAAsAAgALAAgABgAKAAsACQAIAAwACAANAAwACAALAA0ACQAMAA4ACgAJAA4ACwAPAA0ACgAOAA8ACwAKAA8A"),
+"name": "Magic_Mirror",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAB0BAAAAAP//4f4AAAAA5qL//wAA/////+H+AAAAABhdAAAAAP//GF0AAAAA///mov//AAD//wAAHQEAAMwM056f+QAAzAwSBHwHAAAy8xIEfAcAADLz056f+QAAzAz+39f4AAAy8/7f1/gAAMwMPUW0BgAAMvM9RbQGAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mp1xx"]
+resource_name = "Sketchfab_Scene_Object_4"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.136994, -0.00120615, 1, 0.273931, 2.0011),
+"attribute_data": PackedByteArray("evYRnUD+pgF69qYBQP4RnTkH0PMMUe3vHAvt7+9U0PMX5hGd3e2mARfmpgHd7RGd71TH5RwLqukMUarpOQfH5TkHAt7vVMfl71QC3jkHx+V69hGdmPKIBZjyLpl69qYBOQfQ8+9UlfvvVNDzOQeV+7n8pa1PWqGzufyhs09apa0aAjUE0E+gn9BPNQQaAqCf3e2mAb/xLpm/8YgF3e0RnU9aY6m5/GejT1pno7n8Y6l+AgfabE8L1H4CC9RsTwfabE/OyX4Cyc9sT8nPfgLOyQ=="),
+"format": 34896613399,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEA"),
+"material": SubResource("StandardMaterial3D_xqw7c"),
+"name": "Magic_Mirror",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("AAAAAB0BadcAAP//4f5p1wAA5qL//2nXAAAYXQAAadcAAOai//9xvDLz056f+XG8zAzTnp/5cbz//+ai//9xvP//GF0AAGnX///mov//adf/////4f5p1///AAAdAWnX//8AAB0BcbzMDBIEfAdxvDLzEgR8B3G8AAAAAB0BcbwAABhdAABw/P//AAAdAXD8//8YXQAAcPwAAAAAHQFw/AAAAAAdAf//zAzTnp/5///MDBIEfAf//wAA5qL/////AADmov//jYP/////4f6Ng///5qL//42DAAD//+H+jYMy89Oen/kTwDLzPUW0BhPAMvP+39f4E8Ay8xIEfAcTwAAA///h/o3D//8YXQAAjcP/////4f6NwwAAGF0AAI3D///mov////8y8xIEfAf//zLz056f+f////8AAB0B///MDBIEfAd7/cwM/t/X+Hv9zAw9RbQGe/3MDNOen/l7/cwM056f+XD8MvP+39f4cPzMDP7f1/hw/DLz056f+XD8MvMSBHwHjYPMDD1FtAaNgzLzPUW0Bo2DzAwSBHwHjYPH1xvUx9cb1MfXG9TH1xvUAAD/fwAA/38AAP9/AAD/f+Orx1fjq8dX46vHV+Orx1cAAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/9/y0L/f8tC/3/LQv9/y0L///9/////f////3////9/R4rb+keK2/pHitv6R4rb+v///3////9/////f////3//f8tC/3/LQv9/y0L/f8tCvAKhPrwCoT68AqE+vAKhPgAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ag7m0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c8xm1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w63xu"]
+albedo_color = Color(0.00688539, 0.0068854, 0.00688539, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2owtt"]
+size = Vector3(0.417114, 0.0516968, 0.64209)
+
+[node name="mirror2" type="Node3D"]
+script = ExtResource("1_qjont")
+
+[node name="924a25e12872469b994c3d3091c26a59_obj_cleaner_materialmerger_gles" type="Node3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, -0.0594697, 0.241185, 0, -0.080395, -0.178409, 0, 0, 0)
+
+[node name="Object_2" type="MeshInstance3D" parent="924a25e12872469b994c3d3091c26a59_obj_cleaner_materialmerger_gles"]
+mesh = SubResource("ArrayMesh_5hx78")
+skeleton = NodePath("")
+
+[node name="Object_3" type="MeshInstance3D" parent="924a25e12872469b994c3d3091c26a59_obj_cleaner_materialmerger_gles"]
+transform = Transform3D(0.85, 0, 0, 0, 0.0891674, -0.99699, 0, 1.14654, 0.0775368, 0, 0.0125587, 1.02095)
+mesh = SubResource("QuadMesh_2kltt")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_r78ie")
+
+[node name="Object_4" type="MeshInstance3D" parent="924a25e12872469b994c3d3091c26a59_obj_cleaner_materialmerger_gles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -2.66454e-15, 1, 0, 0.0664663, 9.68433e-10)
+mesh = SubResource("ArrayMesh_xdo47")
+skeleton = NodePath("")
+
+[node name="Object_5" type="MeshInstance3D" parent="924a25e12872469b994c3d3091c26a59_obj_cleaner_materialmerger_gles"]
+mesh = SubResource("ArrayMesh_0cih1")
+skeleton = NodePath("")
+
+[node name="Object_6" type="MeshInstance3D" parent="924a25e12872469b994c3d3091c26a59_obj_cleaner_materialmerger_gles"]
+mesh = SubResource("ArrayMesh_mp1xx")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="924a25e12872469b994c3d3091c26a59_obj_cleaner_materialmerger_gles"]
+transform = Transform3D(0.081058, -0.289208, -0.0733009, -0.00529455, 0.0417185, -0.796085, 0.058323, 0.405732, 0.0296059, 0, 0.873391, 0.404595)
+mesh = SubResource("PlaneMesh_c8xm1")
+surface_material_override/0 = SubResource("StandardMaterial3D_w63xu")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.716521, 0.697565, 0, -0.697565, 0.716521, 0, 0.735472, 0.31425)
+fov = 51.1786
+script = ExtResource("7_f0ft6")
+
+[node name="Control" type="Control" parent="Camera3D"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 64.0
+offset_bottom = 63.0
+
+[node name="CLOSE" type="Button" parent="Camera3D/Control"]
+modulate = Color(0.962546, 0.962546, 0.962546, 1)
+self_modulate = Color(0.91664, 0.91664, 0.91664, 1)
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 54.0
+icon = ExtResource("8_lmpjp")
+expand_icon = true
+script = ExtResource("9_87s7m")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.587785, -0.809017, 0, 0.809017, 0.587785, -0.00502735, 0.248319, -0.173828)
+shape = SubResource("BoxShape3D_2owtt")
+
+[connection signal="closecam" from="." to="Camera3D/Control/CLOSE" method="_on_camera_3d_closebuttons"]
+[connection signal="closebuttons" from="Camera3D" to="." method="_on_camera_3d_closebuttons"]
+[connection signal="closejoystick" from="Camera3D" to="." method="_on_camera_3d_closejoystick"]
+[connection signal="pressed" from="Camera3D/Control/CLOSE" to="Camera3D/Control/CLOSE" method="_on_pressed"]
+[connection signal="sceneover" from="Camera3D/Control/CLOSE" to="." method="_on_close_sceneover"]
+[connection signal="input_event" from="Area3D" to="Camera3D" method="_on_area_3d_input_event"]

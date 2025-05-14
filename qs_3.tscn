@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtsam1aoqisju"]
+
+[ext_resource type="Script" uid="uid://b2v0d4dxnwqko" path="res://qs_3.gd" id="1_2350e"]
+[ext_resource type="Texture2D" uid="uid://rp0kc2dmq5oo" path="res://assets/pic/icons8-submit-for-approval-50.png" id="1_p04au"]
+[ext_resource type="Script" uid="uid://7x6k8asa8nkj" path="res://submitq3.gd" id="2_gq353"]
+[ext_resource type="Texture2D" uid="uid://bve7s16enne0k" path="res://assets/pic/A.png" id="3_58cle"]
+[ext_resource type="Texture2D" uid="uid://uqmin36anod2" path="res://assets/pic/icons8-back-100 (1).png" id="4_ms8j1"]
+[ext_resource type="Script" uid="uid://bxxf2ph155t33" path="res://closebutton.gd" id="5_y15yp"]
+
+[node name="qs3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2350e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 75.0
+offset_right = 1085.0
+offset_bottom = 587.0
+color = Color(0.00119745, 0.00119745, 0.00119745, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 81.0
+offset_right = 1070.0
+offset_bottom = 584.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 84.0
+offset_right = 1069.0
+offset_bottom = 584.0
+texture = ExtResource("3_58cle")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 429.0
+offset_right = 940.0
+offset_bottom = 461.0
+text = "η1 - η2 ="
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+modulate = Color(0.982672, 1, 0.99952, 1)
+layout_mode = 0
+offset_left = 785.0
+offset_top = 420.0
+offset_right = 980.0
+offset_bottom = 460.0
+placeholder_text = "write the answer"
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 495.0
+offset_right = 1046.0
+offset_bottom = 531.0
+icon = ExtResource("1_p04au")
+expand_icon = true
+script = ExtResource("2_gq353")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 499.0
+offset_right = 975.0
+offset_bottom = 532.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CLOSE" type="Button" parent="."]
+modulate = Color(0.962546, 0.962546, 0.962546, 1)
+self_modulate = Color(0.91664, 0.91664, 0.91664, 1)
+layout_mode = 0
+offset_left = 514.0
+offset_top = 85.0
+offset_right = 556.0
+offset_bottom = 129.0
+icon = ExtResource("4_ms8j1")
+expand_icon = true
+script = ExtResource("5_y15yp")
+
+[connection signal="reset" from="." to="submit" method="reset_puzzle"]
+[connection signal="opendrawer" from="submit" to="." method="_on_submit_opendrawer"]
+[connection signal="pressed" from="CLOSE" to="CLOSE" method="_on_pressed"]

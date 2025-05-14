@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://cls5pu46twyr6"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxhuevtyjw1ix" path="res://assets/key.obj" id="1_ip42p"]
+[ext_resource type="Script" uid="uid://ckh0aa8ro860u" path="res://key.gd" id="2_dhibq"]
+[ext_resource type="Material" uid="uid://dlwdpplfnx8sx" path="res://assets/materials/keymat.tres" id="2_krfvd"]
+
+[sub_resource type="Animation" id="Animation_25b86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v5kn4"]
+resource_name = "key_fly"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.368, 19.37, 6.864), Vector3(0.368, 19.7, 6.864), Vector3(0.368, 19.37, 6.864)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_erctc"]
+_data = {
+&"RESET": SubResource("Animation_25b86"),
+&"key_fly": SubResource("Animation_v5kn4")
+}
+
+[node name="Key" type="MeshInstance3D"]
+mesh = ExtResource("1_ip42p")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_krfvd")
+script = ExtResource("2_dhibq")
+
+[node name="key_fly" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_erctc")
+}

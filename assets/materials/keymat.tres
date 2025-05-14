@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dlwdpplfnx8sx"]
+
+[ext_resource type="Texture2D" uid="uid://q2b7a37getme" path="res://assets/textures/Metal048A_1K-JPG_Metalness.jpg" id="1_na6vn"]
+[ext_resource type="Texture2D" uid="uid://ptl5y3ko46e2" path="res://assets/textures/Metal048A_1K-JPG_NormalDX.jpg" id="2_7n7yk"]
+
+[resource]
+albedo_color = Color(0.849441, 0.840434, 0.845196, 1)
+metallic = 1.0
+metallic_texture = ExtResource("1_na6vn")
+normal_enabled = true
+normal_texture = ExtResource("2_7n7yk")

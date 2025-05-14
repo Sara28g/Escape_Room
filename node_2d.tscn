@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://wxmaq2daafex"]
+
+[ext_resource type="Script" uid="uid://djs6dsmlbxsg2" path="res://node_2d.gd" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wtcfe")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 477.0
+offset_top = 243.0
+offset_right = 906.0
+offset_bottom = 504.0
+text = "helloo"

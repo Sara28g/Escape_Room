@@ -1,0 +1,155 @@
+[gd_scene load_steps=12 format=3 uid="uid://bx02jksgtqx3v"]
+
+[ext_resource type="Script" uid="uid://c3svifgnr20l3" path="res://q1.gd" id="1_ou058"]
+[ext_resource type="Texture2D" uid="uid://bq238ydno0p3i" path="res://assets/pic/d3d5a13e6c0192feaaa2d4870d3490cb.JPG" id="2_2epk2"]
+[ext_resource type="Texture2D" uid="uid://ny3yphtn1ern" path="res://assets/pic/icons8-arrow-90.png" id="3_kl50q"]
+[ext_resource type="Script" uid="uid://b05cr3mrhqw4p" path="res://clockhandel.gd" id="4_l0ur8"]
+[ext_resource type="Texture2D" uid="uid://bea686ffnv5b8" path="res://assets/pic/icons8-line-24.png" id="5_kxoac"]
+[ext_resource type="Texture2D" uid="uid://uqmin36anod2" path="res://assets/pic/icons8-back-100 (1).png" id="6_mfvg3"]
+[ext_resource type="Script" uid="uid://bxxf2ph155t33" path="res://closebutton.gd" id="7_a0vpo"]
+[ext_resource type="Texture2D" uid="uid://rp0kc2dmq5oo" path="res://assets/pic/icons8-submit-for-approval-50.png" id="8_vmdtj"]
+[ext_resource type="Script" uid="uid://dr024osp0iv1o" path="res://submitbutton.gd" id="9_6du5e"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_j4577"]
+length = 8.11594
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_la40l"]
+a = Vector2(0, -5.73585)
+b = Vector2(-5.14984e-05, 17.6087)
+
+[node name="q_1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_ou058")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -76.0
+offset_top = -40.0
+offset_right = 1600.0
+offset_bottom = 760.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 36.0
+offset_right = 1535.0
+offset_bottom = 792.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 129.0
+offset_right = 1441.0
+offset_bottom = 649.0
+texture = ExtResource("2_2epk2")
+expand_mode = 1
+
+[node name="handel1" type="Sprite2D" parent="Panel"]
+position = Vector2(1173, 388)
+scale = Vector2(1.2, 0.5)
+texture = ExtResource("3_kl50q")
+centered = false
+script = ExtResource("4_l0ur8")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Panel/handel1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/handel1/Area2D"]
+position = Vector2(-20.8696, -5.68434e-14)
+rotation = -1.5708
+scale = Vector2(10, 8)
+shape = SubResource("SeparationRayShape2D_j4577")
+
+[node name="handel3" type="Sprite2D" parent="Panel"]
+position = Vector2(1173, 394)
+scale = Vector2(1.333, 7)
+texture = ExtResource("5_kxoac")
+script = ExtResource("4_l0ur8")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Panel/handel3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/handel3/Area2D"]
+position = Vector2(24, 0)
+scale = Vector2(2, 3)
+shape = SubResource("SegmentShape2D_la40l")
+
+[node name="handel2" type="Sprite2D" parent="Panel"]
+position = Vector2(1172, 389)
+rotation = 1.5708
+scale = Vector2(2, 0.6)
+texture = ExtResource("3_kl50q")
+centered = false
+script = ExtResource("4_l0ur8")
+metadata/_edit_group_ = true
+
+[node name="Area2D2" type="Area2D" parent="Panel/handel2"]
+position = Vector2(-34.7251, 65.8064)
+rotation = 1.5708
+scale = Vector2(1.48387, 0.434063)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/handel2/Area2D2"]
+position = Vector2(-44.3478, -32)
+rotation = 3.14159
+scale = Vector2(8, 17)
+shape = SubResource("SeparationRayShape2D_j4577")
+
+[node name="CLOSE" type="Button" parent="."]
+modulate = Color(0.962546, 0.962546, 0.962546, 1)
+self_modulate = Color(0.91664, 0.91664, 0.91664, 1)
+layout_mode = 0
+offset_left = 148.0
+offset_top = 39.0
+offset_right = 209.0
+offset_bottom = 93.0
+icon = ExtResource("6_mfvg3")
+expand_icon = true
+script = ExtResource("7_a0vpo")
+
+[node name="close_sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1317.0
+offset_top = 595.0
+offset_right = 1363.0
+offset_bottom = 635.0
+icon = ExtResource("8_vmdtj")
+expand_icon = true
+script = ExtResource("9_6du5e")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = 597.0
+offset_right = 1289.0
+offset_bottom = 637.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 100.0
+offset_bottom = 23.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 236.0
+offset_right = 727.0
+offset_bottom = 553.0
+text = "Two cars race around a 24 km circular track (representing a 12-hour clock face, where 2 km = 1 hour).  
+Car A starts at 1:00 (position \"1:00\") moving clockwise  at  3km/h.  
+Car B starts at 9:00 (position \"9:00\") moving counter-clockwise at 5km/h.  
+
+If Car A starts driving at 2:30 AM and Car B starts driving at 3:30 AM, when do they meet for the second time?"
+tab_size = 0
+
+[connection signal="reset" from="." to="submit" method="reset_puzzle"]
+[connection signal="pressed" from="CLOSE" to="." method="_on_close_pressed"]
+[connection signal="connect_to" from="submit" to="." method="_on_submit_connect_to"]
+[connection signal="pressed" from="submit" to="submit" method="_on_pressed"]

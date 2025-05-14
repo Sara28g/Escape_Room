@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfhf11tusdwmq"]
+
+[ext_resource type="AudioStream" uid="uid://dwfctnrx5x5vc" path="res://assets/sounds/Untitled video - Made with Clipchamp (2).mp3" id="1_ku7rd"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ku7rd")
+volume_db = -8.0
+autoplay = true

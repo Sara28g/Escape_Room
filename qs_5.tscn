@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://bty8i3t3r7ckg"]
+
+[ext_resource type="Script" uid="uid://rl5l18p7xph7" path="res://qs_5.gd" id="1_a0w08"]
+[ext_resource type="Texture2D" uid="uid://rp0kc2dmq5oo" path="res://assets/pic/icons8-submit-for-approval-50.png" id="1_caq5f"]
+[ext_resource type="Script" uid="uid://b0ltfmhlegjlu" path="res://submit5.gd" id="2_caq5f"]
+[ext_resource type="Texture2D" uid="uid://uqmin36anod2" path="res://assets/pic/icons8-back-100 (1).png" id="3_ixxd1"]
+[ext_resource type="Script" uid="uid://bxxf2ph155t33" path="res://closebutton.gd" id="4_o2bnu"]
+
+[node name="qs5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a0w08")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 58.0
+offset_right = 1074.0
+offset_bottom = 570.0
+color = Color(0.00119745, 0.00119745, 0.00119745, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 64.0
+offset_right = 1059.0
+offset_bottom = 567.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 168.0
+offset_right = 1019.0
+offset_bottom = 322.0
+text = "In triangle triangle ABC , the sum of the lengths of the sides AB and AC is 10cm.  
+
+what is the maximum possible area of triangle ?"
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+modulate = Color(0.982672, 1, 0.99952, 1)
+layout_mode = 0
+offset_left = 687.0
+offset_top = 322.0
+offset_right = 929.0
+offset_bottom = 366.0
+scale = Vector2(0.8, 0.8)
+placeholder_text = "write the answer"
+alignment = 1
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 478.0
+offset_right = 1035.0
+offset_bottom = 514.0
+icon = ExtResource("1_caq5f")
+expand_icon = true
+script = ExtResource("2_caq5f")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 484.0
+offset_right = 966.0
+offset_bottom = 517.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CLOSE" type="Button" parent="."]
+modulate = Color(0.962546, 0.962546, 0.962546, 1)
+self_modulate = Color(0.91664, 0.91664, 0.91664, 1)
+layout_mode = 0
+offset_left = 503.0
+offset_top = 68.0
+offset_right = 545.0
+offset_bottom = 112.0
+icon = ExtResource("3_ixxd1")
+expand_icon = true
+script = ExtResource("4_o2bnu")
+
+[connection signal="reset" from="." to="submit" method="reset_puzzle"]
+[connection signal="q5correct" from="submit" to="." method="_on_submit_q_5_correct"]
+[connection signal="sceneover" from="submit" to="." method="_on_close_sceneover"]
+[connection signal="pressed" from="CLOSE" to="CLOSE" method="_on_pressed"]
+[connection signal="sceneover" from="CLOSE" to="." method="_on_close_sceneover"]
